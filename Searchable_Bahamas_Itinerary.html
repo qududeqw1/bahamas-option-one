@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Bahamas Itinerary</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; }
+        #map { height: 100vh; width: 100%; }
+        .controls { position: absolute; top: 10px; right: 10px; background: white; padding: 15px; border-radius: 8px; z-index: 1000; }
+        label { display: block; margin-bottom: 5px; }
+        #searchBox { width: 100%; padding: 5px; margin-bottom: 10px; }
+        #addLocationBtn { width: 100%; padding: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <h3>Search & Add Destination</h3>
+    <input type="text" id="searchBox" placeholder="Enter a location...">
+    <button id="addLocationBtn">Add Destination</button>
+    
+    <h3>Fuel Stops</h3>
+    <label><input type="checkbox" class="fuel-toggle" data-name="Key West, FL"> Fueled at Key West</label>
+    <label><input type="checkbox" class="fuel-toggle" data-name="Cat Cay, Bahamas"> Fueled at Cat Cay</label>
+    <label><input type="checkbox" class="fuel-toggle" data-name="Nassau, Bahamas"> Fueled at Nassau</label>
+    <label><input type="checkbox" class="fuel-toggle" data-name="West Palm Beach, FL"> Fueled at West Palm Beach</label>
+</div>
+
+<div id="map"></div>
+
+<script>
+    var map = L.map('map').setView([26.0, -78.0], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var waypoints = [
+        { name: "Key West, FL", coords: [24.5551, -81.7800] },
+        { name: "Cat Cay, Bahamas", coords: [25.5476, -79.2806] },
+        { name: "Nassau, Bahamas", coords: [25.0343, -77.3963] },
+        { name: "West Palm Beach, FL", coords: [26.7153, -80.0534] },
+        { name: "Jarrett Bay Shipyard, NC", coords: [34.7981, -76.6808] }
+    ];
+
+    var markers = {};
+    var lines = null;
+
+    function updateMap() {
+        if (lines) { map.removeLayer(lines); }
+        
+        Object.keys(markers).forEach(function(name) {
+            map.removeLayer(markers[name]);
+        });
+        markers = {};
+
+        var latlngs = waypoints.map(wp => wp.coords);
+        waypoints.forEach(function(wp) {
+            markers[wp.name] = L.marker(wp.coords, { icon: L.icon({ iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png', iconSize: [32, 32] }) })
+                .bindPopup("<b>" + wp.name + "</b><br><a href='https://www.google.com/maps/search/?api=1&query=" + wp.coords[0] + "," + wp.coords[1] + "' target='_blank'>Open in Google Maps</a>")
+                .addTo(map);
+        });
+
+        lines = L.polyline(latlngs, { color: 'blue', weight: 3 }).addTo(map);
+    }
+
+    $("#addLocationBtn").click(function() {
+        var searchQuery = $("#searchBox").val();
+        if (searchQuery.trim() === "") return;
+
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ address: searchQuery }, function(results, status) {
+            if (status === "OK" && results.length > 0) {
+                var location = results[0].geometry.location;
+                var newPlace = { name: results[0].formatted_address, coords: [location.lat(), location.lng()] };
+
+                waypoints.push(newPlace);
+                updateMap();
+                $("#searchBox").val("");
+            } else {
+                alert("Location not found. Try again.");
+            }
+        });
+    });
+
+    $(".fuel-toggle").change(function() {
+        var locationName = $(this).data("name");
+        if ($(this).is(":checked")) {
+            if (markers[locationName]) {
+                markers[locationName].setIcon(L.icon({ iconUrl: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png', iconSize: [32, 32] }));
+            }
+        } else {
+            if (markers[locationName]) {
+                markers[locationName].setIcon(L.icon({ iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png', iconSize: [32, 32] }));
+            }
+        }
+    });
+
+    updateMap();
+</script>
+
+</body>
+</html>
