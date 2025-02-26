@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_95f571f85f0738f8a7224bcb3d78c398 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_95f571f85f0738f8a7224bcb3d78c398" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_95f571f85f0738f8a7224bcb3d78c398 = L.map(
+                "map_95f571f85f0738f8a7224bcb3d78c398",
+                {
+                    center: [26.0, -78.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_44d015808e82753fa8b5ca79b3a4e2a2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_44d015808e82753fa8b5ca79b3a4e2a2.addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var marker_5189a104bdd0bf9327182d4f280b5388 = L.marker(
+                [27.7676, -82.6403],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_a0da790a88cbaf6e9f580aee8e8208f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5189a104bdd0bf9327182d4f280b5388.setIcon(icon_a0da790a88cbaf6e9f580aee8e8208f2);
+        
+    
+        var popup_56bc2f395388c0b03f65bed12ff8890a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d2ad89ad2078f4af0cc774d4d3318d86 = $(`<div id="html_d2ad89ad2078f4af0cc774d4d3318d86" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> St. Petersburg, FL<br><b>Fuel Remaining:</b> 5,000 gallons<br><br><b>Key Attractions:</b><br>Departure Point<br>Marinas & Yacht Clubs</div>`)[0];
+                popup_56bc2f395388c0b03f65bed12ff8890a.setContent(html_d2ad89ad2078f4af0cc774d4d3318d86);
+            
+        
+
+        marker_5189a104bdd0bf9327182d4f280b5388.bindPopup(popup_56bc2f395388c0b03f65bed12ff8890a)
+        ;
+
+        
+    
+    
+            marker_5189a104bdd0bf9327182d4f280b5388.bindTooltip(
+                `<div>
+                     St. Petersburg, FL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_27c87aa07ee9de0774e1320a19e4e5ba = L.marker(
+                [24.5551, -81.78],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_aa75bbf5602a5589bb67303b01d649b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_27c87aa07ee9de0774e1320a19e4e5ba.setIcon(icon_aa75bbf5602a5589bb67303b01d649b1);
+        
+    
+        var popup_0a0fd461f02c875106d2941b9ec3d416 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_971ba4c337e149f4d6517c7510948f5a = $(`<div id="html_971ba4c337e149f4d6517c7510948f5a" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> Key West, FL<br><b>Fuel Remaining:</b> 3,800 gallons<br><br><b>Key Attractions:</b><br>Duval Street Nightlife<br>Ernest Hemingway House<br>Mallory Square Sunset<br>Florida Reef Snorkeling</div>`)[0];
+                popup_0a0fd461f02c875106d2941b9ec3d416.setContent(html_971ba4c337e149f4d6517c7510948f5a);
+            
+        
+
+        marker_27c87aa07ee9de0774e1320a19e4e5ba.bindPopup(popup_0a0fd461f02c875106d2941b9ec3d416)
+        ;
+
+        
+    
+    
+            marker_27c87aa07ee9de0774e1320a19e4e5ba.bindTooltip(
+                `<div>
+                     Key West, FL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f83f4dc10b3c1e41e45f122f3e51e370 = L.marker(
+                [25.5476, -79.2806],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_ba00d2be43b8406d98b253066766a69c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f83f4dc10b3c1e41e45f122f3e51e370.setIcon(icon_ba00d2be43b8406d98b253066766a69c);
+        
+    
+        var popup_12d8bb33f53a9528d507ba7927b49eba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3a970b047f1c22d62a96870845dd241d = $(`<div id="html_3a970b047f1c22d62a96870845dd241d" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> Cat Cay, Bahamas<br><b>Fuel Remaining:</b> 2,780 gallons<br><br><b>Key Attractions:</b><br>Cat Cay Marina<br>Hemingway Reef Snorkeling<br>Deep-sea Fishing</div>`)[0];
+                popup_12d8bb33f53a9528d507ba7927b49eba.setContent(html_3a970b047f1c22d62a96870845dd241d);
+            
+        
+
+        marker_f83f4dc10b3c1e41e45f122f3e51e370.bindPopup(popup_12d8bb33f53a9528d507ba7927b49eba)
+        ;
+
+        
+    
+    
+            marker_f83f4dc10b3c1e41e45f122f3e51e370.bindTooltip(
+                `<div>
+                     Cat Cay, Bahamas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_60637a5c4ff4166807c01b9695375b0a = L.marker(
+                [25.4175, -77.881],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_234ca67921dbc88a07ff1a2a100f7b42 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_60637a5c4ff4166807c01b9695375b0a.setIcon(icon_234ca67921dbc88a07ff1a2a100f7b42);
+        
+    
+        var popup_85150032826f62fd48cfe1b7ba657ab4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_30453cccf579adc0560866173104039f = $(`<div id="html_30453cccf579adc0560866173104039f" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> Chub Cay, Berry Islands<br><b>Fuel Remaining:</b> 2,300 gallons<br><br><b>Key Attractions:</b><br>Chub Cay Blue Hole<br>Sportfishing<br>Paddleboarding in Mangroves</div>`)[0];
+                popup_85150032826f62fd48cfe1b7ba657ab4.setContent(html_30453cccf579adc0560866173104039f);
+            
+        
+
+        marker_60637a5c4ff4166807c01b9695375b0a.bindPopup(popup_85150032826f62fd48cfe1b7ba657ab4)
+        ;
+
+        
+    
+    
+            marker_60637a5c4ff4166807c01b9695375b0a.bindTooltip(
+                `<div>
+                     Chub Cay, Berry Islands
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d8dcbddddbfcae3767d114eeca182803 = L.marker(
+                [25.0343, -77.3963],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_95d7361880e6d5bebbcb1da23b77c729 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d8dcbddddbfcae3767d114eeca182803.setIcon(icon_95d7361880e6d5bebbcb1da23b77c729);
+        
+    
+        var popup_3853e6f6ee681dc91a87644c76c8fc87 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0cd8771c0737b24ce5eef9ae068ece85 = $(`<div id="html_0cd8771c0737b24ce5eef9ae068ece85" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> Nassau, Bahamas<br><b>Fuel Remaining:</b> 2,060 gallons<br><br><b>Key Attractions:</b><br>Atlantis Resort<br>Queen’s Staircase<br>John Watling’s Distillery</div>`)[0];
+                popup_3853e6f6ee681dc91a87644c76c8fc87.setContent(html_0cd8771c0737b24ce5eef9ae068ece85);
+            
+        
+
+        marker_d8dcbddddbfcae3767d114eeca182803.bindPopup(popup_3853e6f6ee681dc91a87644c76c8fc87)
+        ;
+
+        
+    
+    
+            marker_d8dcbddddbfcae3767d114eeca182803.bindTooltip(
+                `<div>
+                     Nassau, Bahamas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b694d9dbec5c30f5aef6e8ffcdf75731 = L.marker(
+                [25.5, -76.634],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_6d61316bd7e3602dee5f73af53bb77d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b694d9dbec5c30f5aef6e8ffcdf75731.setIcon(icon_6d61316bd7e3602dee5f73af53bb77d1);
+        
+    
+        var popup_b69c9fb513984531bb3a6cb5594f01f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_39528cf046af9234480989d3dab23e12 = $(`<div id="html_39528cf046af9234480989d3dab23e12" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> Harbour Island, Bahamas<br><b>Fuel Remaining:</b> 1,700 gallons<br><br><b>Key Attractions:</b><br>Pink Sands Beach<br>Dunmore Town<br>Swim with Sea Turtles</div>`)[0];
+                popup_b69c9fb513984531bb3a6cb5594f01f0.setContent(html_39528cf046af9234480989d3dab23e12);
+            
+        
+
+        marker_b694d9dbec5c30f5aef6e8ffcdf75731.bindPopup(popup_b69c9fb513984531bb3a6cb5594f01f0)
+        ;
+
+        
+    
+    
+            marker_b694d9dbec5c30f5aef6e8ffcdf75731.bindTooltip(
+                `<div>
+                     Harbour Island, Bahamas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f346390e7b1b341a1be0feb9ad002c84 = L.marker(
+                [25.5489, -76.7626],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_55199eab7782ca90faa3befa8d087c87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f346390e7b1b341a1be0feb9ad002c84.setIcon(icon_55199eab7782ca90faa3befa8d087c87);
+        
+    
+        var popup_3a372bcd09d015b382f61a50a4a4c4f8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2f9a521a21ee9203c549d79d7b70203e = $(`<div id="html_2f9a521a21ee9203c549d79d7b70203e" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> Spanish Wells, Bahamas<br><b>Fuel Remaining:</b> 1,580 gallons<br><br><b>Key Attractions:</b><br>Glass Window Bridge<br>Remora Bay Snorkeling</div>`)[0];
+                popup_3a372bcd09d015b382f61a50a4a4c4f8.setContent(html_2f9a521a21ee9203c549d79d7b70203e);
+            
+        
+
+        marker_f346390e7b1b341a1be0feb9ad002c84.bindPopup(popup_3a372bcd09d015b382f61a50a4a4c4f8)
+        ;
+
+        
+    
+    
+            marker_f346390e7b1b341a1be0feb9ad002c84.bindTooltip(
+                `<div>
+                     Spanish Wells, Bahamas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2fb2a67ad991fa5bd5e9642f0aa7a35b = L.marker(
+                [24.1833, -76.45],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_94dc1cfd3bf5a38f01c942b50c2c86d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2fb2a67ad991fa5bd5e9642f0aa7a35b.setIcon(icon_94dc1cfd3bf5a38f01c942b50c2c86d6);
+        
+    
+        var popup_cdac001b038ef66d9503d650413a518e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa0d6ab934b0b6a19b9719714918029b = $(`<div id="html_fa0d6ab934b0b6a19b9719714918029b" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> Exumas, Bahamas<br><b>Fuel Remaining:</b> 1,040 gallons<br><br><b>Key Attractions:</b><br>Swimming Pigs at Big Major Cay<br>Thunderball Grotto<br>Iguanas at Allen’s Cay</div>`)[0];
+                popup_cdac001b038ef66d9503d650413a518e.setContent(html_fa0d6ab934b0b6a19b9719714918029b);
+            
+        
+
+        marker_2fb2a67ad991fa5bd5e9642f0aa7a35b.bindPopup(popup_cdac001b038ef66d9503d650413a518e)
+        ;
+
+        
+    
+    
+            marker_2fb2a67ad991fa5bd5e9642f0aa7a35b.bindTooltip(
+                `<div>
+                     Exumas, Bahamas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3cedc61e8a327da9b14dbe9b205fad46 = L.marker(
+                [26.5333, -77.0333],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_47de94e179ccfc97bba901c751ef37ad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3cedc61e8a327da9b14dbe9b205fad46.setIcon(icon_47de94e179ccfc97bba901c751ef37ad);
+        
+    
+        var popup_cfc744e847240af0d90649f2a0809d6e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2f85404437a6f96f00295f5a18249d91 = $(`<div id="html_2f85404437a6f96f00295f5a18249d91" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> Abaco, Bahamas<br><b>Fuel Remaining:</b> 500 gallons<br><br><b>Key Attractions:</b><br>Hope Town Lighthouse<br>Green Turtle Cay<br>Deep-sea Fishing</div>`)[0];
+                popup_cfc744e847240af0d90649f2a0809d6e.setContent(html_2f85404437a6f96f00295f5a18249d91);
+            
+        
+
+        marker_3cedc61e8a327da9b14dbe9b205fad46.bindPopup(popup_cfc744e847240af0d90649f2a0809d6e)
+        ;
+
+        
+    
+    
+            marker_3cedc61e8a327da9b14dbe9b205fad46.bindTooltip(
+                `<div>
+                     Abaco, Bahamas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c777ca3a3d3b593a2dbb12f9a9efa048 = L.marker(
+                [34.7981, -76.6808],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_935c2aae2c367a88b867872806676941 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c777ca3a3d3b593a2dbb12f9a9efa048.setIcon(icon_935c2aae2c367a88b867872806676941);
+        
+    
+        var popup_2cb4a98b7314cbf9cdae8068ee541f22 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd71e2b32864ee0af9d18b79ddac1906 = $(`<div id="html_cd71e2b32864ee0af9d18b79ddac1906" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> Jarrett Bay Shipyard, NC<br><b>Fuel Remaining:</b> 0 gallons<br><br><b>Key Attractions:</b><br>Final Destination - Maintenance & Refit</div>`)[0];
+                popup_2cb4a98b7314cbf9cdae8068ee541f22.setContent(html_cd71e2b32864ee0af9d18b79ddac1906);
+            
+        
+
+        marker_c777ca3a3d3b593a2dbb12f9a9efa048.bindPopup(popup_2cb4a98b7314cbf9cdae8068ee541f22)
+        ;
+
+        
+    
+    
+            marker_c777ca3a3d3b593a2dbb12f9a9efa048.bindTooltip(
+                `<div>
+                     Jarrett Bay Shipyard, NC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ec07abdd40caa0663442601af1de3a73 = L.marker(
+                [26.7153, -80.0534],
+                {
+}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var icon_4c0c615a533b6d5c134f76699b08cac1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ec07abdd40caa0663442601af1de3a73.setIcon(icon_4c0c615a533b6d5c134f76699b08cac1);
+        
+    
+        var popup_ef0643909d16b42e48b16a4031b4885c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_450e78ed74d0686d59e9422a4d21f723 = $(`<div id="html_450e78ed74d0686d59e9422a4d21f723" style="width: 100.0%; height: 100.0%;"><b>Destination:</b> West Palm Beach, FL<br><b>Refuel Available</b><br><b>Key Attractions:</b><br>Refuel Point<br>Luxury Shopping & Dining<br>Palm Beach Marinas</div>`)[0];
+                popup_ef0643909d16b42e48b16a4031b4885c.setContent(html_450e78ed74d0686d59e9422a4d21f723);
+            
+        
+
+        marker_ec07abdd40caa0663442601af1de3a73.bindPopup(popup_ef0643909d16b42e48b16a4031b4885c)
+        ;
+
+        
+    
+    
+            marker_ec07abdd40caa0663442601af1de3a73.bindTooltip(
+                `<div>
+                     West Palm Beach, FL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e27dccb30037be332b4213d63ac5dbe8 = L.polyline(
+                [[27.7676, -82.6403], [24.5551, -81.78], [25.5476, -79.2806], [25.4175, -77.881], [25.0343, -77.3963], [25.5, -76.634], [25.5489, -76.7626], [24.1833, -76.45], [26.5333, -77.0333], [34.7981, -76.6808]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+    
+            var poly_line_00df061e8fa8a9ed247716f5bfbfe292 = L.polyline(
+                [[26.5333, -77.0333], [26.7153, -80.0534], [34.7981, -76.6808]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": "5,10", "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_95f571f85f0738f8a7224bcb3d78c398);
+        
+</script>
+</html>
